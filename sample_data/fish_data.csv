@@ -1,6 +1,28 @@
-length,weight,age,habitat,species
-12,35,2,Coastal,SpeciesA
-15,50,3,Coastal,SpeciesB
-9,20,1,DeepSea,SpeciesC
-20,80,4,Reef,SpeciesD
-11,30,2,Coastal,SpeciesE
+import pandas as pd
+import numpy as np
+
+# Seed for reproducibility
+np.random.seed(42)
+
+species_list = ["Tuna", "Mackerel", "Sardine", "Snapper", "Cod"]
+habitats = ["Coastal", "Offshore", "Reef"]
+
+# Generate 100 sample rows
+data = []
+for _ in range(100):
+    sp = np.random.choice(species_list)
+    length = np.random.uniform(10, 100)  # cm
+    weight = np.random.uniform(50, 2000)  # grams
+    hab = np.random.choice(habitats)
+    lat = np.random.uniform(8.0, 20.0)   # roughly Indian coastal latitudes
+    lon = np.random.uniform(70.0, 80.0)  # roughly Indian coastal longitudes
+    count = np.random.randint(1, 50)
+    date = pd.Timestamp('2025-01-01') + pd.to_timedelta(np.random.randint(0, 30), unit='D')
+    data.append([sp, length, weight, hab, lat, lon, count, date])
+
+df = pd.DataFrame(data, columns=["species","length","weight","habitat","latitude","longitude","count","date"])
+
+# Save to CSV
+df.to_csv("sample_fish_data.csv", index=False)
+
+print("Sample dataset saved as 'sample_fish_data.csv'")

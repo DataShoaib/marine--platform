@@ -1,0 +1,11 @@
+latitude,longitude,species,count
+12.9716,80.0,SpeciesA,50
+13.0827,80.2707,SpeciesB,70
+14.0,75.0,SpeciesC,120
+15.5,74.0,SpeciesD,80
+16.2,73.0,SpeciesE,60
+12.5,78.0,SpeciesA,90
+13.5,79.0,SpeciesB,40
+14.5,76.5,SpeciesC,110
+15.0,77.0,SpeciesD,95
+16.0,75.0,SpeciesE,85
