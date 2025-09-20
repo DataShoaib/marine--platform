@@ -1,0 +1,5 @@
+from PIL import Image, ImageDraw
+img = Image.new('RGB', (128,128), color='white')
+draw = ImageDraw.Draw(img)
+draw.ellipse((25,25,100,100), fill='gray', outline='black')
+img.save("otolith_test_new.png")
